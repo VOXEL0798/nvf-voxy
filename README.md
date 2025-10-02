@@ -5,6 +5,7 @@
 let
     system = "x86_64-linux";
     username = "username"; #change this `username` to your username
+    hostname = "nixos"; #change this `nixos` to your hostname
 in {
   description = "Flake.nix";
 
@@ -39,7 +40,7 @@ in {
 
   #for nixos configuration
   nixosConfigurations = {
-    nixos = nixpkgs.lib.nixosSystem {
+    ${hostname} = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [
           nvf-custom.homeManagerModules.default
@@ -52,3 +53,4 @@ in {
 
 ```
 Далее ничего делать не нужно, флейк сам установится при пересборке системы и будет использоваться в вашем neovim`е
+
