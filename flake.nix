@@ -8,6 +8,13 @@
     
     outputs = { self, nixpkgs, flake-utils, nvf, ... }:
     {
+        homeManagerModules.default = { ... }: {
+            imports = [
+                nvf.homeManagerModules.default
+                ./default.nix
+            ];
+        };
+
         nixosModules.default = { ... }: {
             imports = [
                 nvf.nixosModules.default
