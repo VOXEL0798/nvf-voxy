@@ -7,19 +7,20 @@
     };
     
     outputs = { self, nixpkgs, flake-utils, nvf, ... }:
-    let
-        imports = [
-            nvf.homeManagerModules.default
-            ./default.nix
-        ];
-    in
     {
         homeManagerModules.default = { ... }: {
-            inherit imports;
+            imports = [
+                nvf.homeManagerModules.default
+                ./default.nix
+            ];
         };
 
         nixosModules.default = { ... }: {
-            inherit imports;
+            imports = [
+                nvf.nixosModules.default
+                ./default.nix
+            ];
         };
     };
 }
+
