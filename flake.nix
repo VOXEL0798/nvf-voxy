@@ -6,7 +6,7 @@
         nvf.url = "github:NotAShelf/nvf";
     };
     
-    outputs = { self, nixpkgs, flake-utils, nvf, ... }:
+    outputs = { self, nixpkgs, nvf, ... }:
     {
         homeManagerModules.default = { ... }: {
             imports = [
