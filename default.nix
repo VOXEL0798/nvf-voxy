@@ -2,7 +2,7 @@
   programs.nvf = {
     enable = true;
 
-    luaConfigRC.lua-config-dir = ''
+    vim.luaConfigRC.lua-config-dir = ''
       -- Загружаем наш тестовый модуль из ~/.config/nvf
       require("lua-config")
     '';
