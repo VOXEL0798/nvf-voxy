@@ -17,7 +17,7 @@
 
           vim.luaConfigRC.lua-config = ''
             -- Загружаем наш тестовый модуль из ~/.config/nvf
-            require("init")
+            require("lua-config")
           '';
           viAlias = false;
           vimAlias = true;
