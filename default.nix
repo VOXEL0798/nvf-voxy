@@ -1,8 +1,4 @@
-{
-  lib,
-  ...
-}:
-{
+{lib, ...}: {
   programs.nvf = {
     enable = true;
     settings = {
@@ -18,6 +14,11 @@
           #    package = bufferline-nvim;
           #  };
           #};
+
+          vim.luaConfigRC.lua-config = ''
+            -- Загружаем наш тестовый модуль из ~/.config/nvf
+            require("init")
+          '';
           viAlias = false;
           vimAlias = true;
 
