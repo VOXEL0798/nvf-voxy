@@ -2,10 +2,11 @@
   programs.nvf = {
     enable = true;
 
-    vim.luaConfigRC.lua-config-dir = ''
+    luaConfigRC.lua-config-dir = ''
       -- Загружаем наш тестовый модуль из ~/.config/nvf
       require("lua-config")
     '';
+
     settings = {
       vim = lib.mkMerge [
         (import ./keymap.nix)
