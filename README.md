@@ -43,7 +43,7 @@ in {
     ${hostname} = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [
-          nvf-custom.homeManagerModules.default
+          nvf-custom.nixosModules.default
           ./configuration.nix
         ];
       };
@@ -53,4 +53,5 @@ in {
 
 ```
 Далее ничего делать не нужно, флейк сам установится при пересборке системы и будет использоваться в вашем neovim`е
+
 
